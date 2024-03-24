@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CrudUsuarios.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Usuarios</h1>
+
+
+<a class="btn btn-secondary" asp-action="Create">Add user</a>
+
+<div id="usersDataUrl" data-url="@Url.Action("GetUserData", "Users")"></div>
+<div id="usersEditUrl" data-url="@Url.Action("Edit", "Users")"></div>
+<div id="usersDetailsUrl" data-url="@Url.Action("Details", "Users")"></div>
+<div id="usersDeleteUrl" data-url="@Url.Action("Delete", "Users")"></div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="usersTable">
+    </tbody>
+</table>
+
+<script src="~/js/indexUsers.js"></script>
